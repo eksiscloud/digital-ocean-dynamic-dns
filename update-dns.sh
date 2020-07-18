@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# When using cron path of the secret must be absolutely
 [ ! -f ./secrets ] && \
   echo 'secrets file is missing!' && \
   exit 1
