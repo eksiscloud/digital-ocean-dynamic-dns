@@ -28,6 +28,9 @@ for ID in "${RECORD_IDS[@]}"; do
 
   # if the IPs are the same just exit
   [ "$local_ip" == "$public_ip" ] && exit 0
+  
+  # if the IPs are same as array of whitelisted ones just exit
+  [ ${#WHITE_IDS[@]} -eq $local_ip ] && exit 0
 
   # --fail silently on server errors
   curl \
